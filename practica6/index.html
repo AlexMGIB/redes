@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Práctica 2 | Ibero Puebla</title>
+        <title>Práctica 6 | Ibero Puebla</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -51,7 +51,7 @@
                     <!-- Post header-->
                     <header class="mb-4">
                         <!-- Post title-->
-                        <h1 class="fw-bolder mb-1">Práctica 2: Protocolo de Comunicación-Convertidor a Binario</h1>
+                        <h1 class="fw-bolder mb-1">Práctica 6: Elementos de una Red Local</h1>
 
                         <!-- ETIQUETA DE ALUMNO (Hacer una por cada alumno)-->
                             <img class="img-fluid rounded-circle" width="50px" src="../assets/singprof.jpg" alt="..." />
@@ -66,10 +66,10 @@
                             </div>
                         <!--Aqui termina etiqueta de alumno-->
 
-                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: 17 de Enero</div>
+                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: 13 de Febrero</div>
                         <!-- ETIQUETAS O TOPICOS IMPORTANTES DE LA PRACTICA-->
-                        <a class="badge bg-primary text-decoration-none link-light" >TinkerCAD</a>
-                        <a class="badge bg-primary text-decoration-none link-light" >Arduino</a>
+                        <a class="badge bg-primary text-decoration-none link-light" >Simulacion</a>
+                        <a class="badge bg-primary text-decoration-none link-light" >Redes Digitales</a>
 
                     </header>
                 </div>
@@ -86,10 +86,14 @@
 
                         <p id="intro">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Objetivos -</h2>
-                        <p class="fs-6 mb-4">General: Conocer, identificar y comprobar el funcionamiento al desarrollar un protocolo de comunicación, en esta tercera parte de un convertidor a binario.</p>
+                        <p class="fs-6 mb-4">General: </p>
                         <p class="fs-6 mb-4">Especificos:</p>
-                            <li>Utilizando 1 Arduino, diseñar un sistema que permita convertir el valor analógico de un potenciómetro en un arreglo de variables que representen el numero en binario de 8 bits, de tal forma que podamos ver cada uno de los valores como salidas digitales en los pines del Arduino.</li>
-                            <li>Utilizando un segundo Arduino, diseñar una función que permita convertir el valor en binario obtenido de 8 puertos digitales del Arduino en un valor entero en sistema decimal y mostrarlos en el monitor serial. Utilizar el primer Arduino para generar los valores digitales en binario y el segundo Arduino utilizarlo para decodificarlos y convertirlos en un valor decimal.</li>
+                            <li>Utilizando 1 Arduino, diseñar un sistema que permita convertir el valor analógico de un potenciómetro en un arreglo de variables que representen el numero en binario de 8 bits, y los deposite en un arreglo. Finalmente elaborar un código de programación que permita enviar los bits del arreglo en orden y en serie caracteristicas:
+                                <li>Iniciar el envió de los datos siempre con una señal HIGH (En total se enviarán 9 datos, el primer bit en HIGH y posteriormente los 8 bits de información).</li>
+                                <li>Enviar los datos con una duración del pulso predeterminada, ejemplo 1000ms.</li>
+                                <li>Enviar siempre la missma cantidad de bits.</li>
+                            </li>
+                            <li>Utilizando un segundo Arduino, diseñar una función que permita adquirir el valor en bits de la señal de comunicación del Arduino anterior, la procese y la convierte en un dato decimal que finalmente enviara al monitor serial.</li>
                         
   
                         <p id="materiales">
@@ -108,12 +112,12 @@
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Codigo</h1>
                             <p class="fs-6 mb-4">Aqui se encuentra el codigo del Arduino 1</p>
                             
-                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/cod21.JPG" alt="..." /></figure>
+                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/cod31.JPG" alt="..." /></figure>
 
                             <p class="fs-6 mb-4">Aqui se encuentra el codigo del Arduino 2</p>
                             
-                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/cod22.JPG" alt="..." /></figure>
-
+                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/cod32.JPG" alt="..." /></figure>
+                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/cod33.JPG" alt="..." /></figure>
                             <p id="diseño">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Diseño</h1>
                             <p class="fs-6 mb-4">Para esta practica no fue necesario plantear un diseño, solo seguir los diagramas de conexiones y hacer las pruebas pertinentes</p>
@@ -148,8 +152,9 @@
                         <p>Para esta práctica no se presentaron evidencias.</p>
                         <p id="descargables">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Descargables -</h2>
-                        <a class="nav-link" href="files/Envia_datos.ino">Envio de Datos</a>
-                        <a class="nav-link" href="files/Recibe_datos.ino">Receptor de Datos</a>
+                        <a class="nav-link" href="files/envia_datos.ino">Envio de Datos</a>
+                        <a class="nav-link" href="files/recibe_datos.ino">Receptor de Datos</a>
+                        <a class="nav-link" href="files/sketch_jan24a.ino">Arreglo</a>
                 </div>
             </section>
 
