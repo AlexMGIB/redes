@@ -23,7 +23,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link" href="../">Home</a></li>                    
-                            <li class="nav-item"><a class="nav-link" href="../index.html#resumen">Acerca de mi</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../index.html#resumen">Acerca de nosotros</a></li>
                             <li class="nav-item"><a class="nav-link" href="../index.html#practicas">Prácticas</a></li>
                         </ul>
                     </div>
@@ -37,7 +37,7 @@
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
                             <div class="my-5 text-center text-xl-start">
                                 <h1 class="display-6 fw-bolder text-white mb-2">Portafolio de Actividades</h1>
-                                <h1 class="display-8 fw-bolder text-white mb-2">Automatización Industrial</h1>
+                                <h1 class="display-8 fw-bolder text-white mb-2">Redes Digitales De Datos</h1>
                                 <p id="resumen" class="display-8 fw-normal text-white-50 mb-4">Departamento de Ciencias e Ingenierías | Universidad Iberoamericana Puebla, México.</p>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                     <!-- Post header-->
                     <header class="mb-4">
                         <!-- Post title-->
-                        <h1 class="fw-bolder mb-1">hhh</h1>
+                        <h1 class="fw-bolder mb-1">Práctica 1: Protocolo de Comunicación–Contador de pulsos y contador de tiemp</h1>
 
                         <!-- ETIQUETA DE ALUMNO (Hacer una por cada alumno)-->
                             <img class="img-fluid rounded-circle" width="50px" src="../assets/singprof.jpg" alt="..." />
@@ -66,7 +66,7 @@
                             </div>
                         <!--Aqui termina etiqueta de alumno-->
 
-                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: hhhhh</div>
+                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: 17 de Enero</div>
                         <!-- ETIQUETAS O TOPICOS IMPORTANTES DE LA PRACTICA-->
                         <a class="badge bg-primary text-decoration-none link-light" >TinkerCAD</a>
                         <a class="badge bg-primary text-decoration-none link-light" >Arduino</a>
@@ -86,26 +86,65 @@
 
                         <p id="intro">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Objetivos -</h2>
-                        <p class="fs-6 mb-4">hhhh</p>
-                        <p class="fs-6 mb-4">hhhhh</p>
-
+                        <p class="fs-6 mb-4">General:Conocer, identificar y comprobar el funcionamiento al desarrollar un protocolo de comunicación, en esta primera parte de un contador de pulsos y un contador de tiempo en un pulso.</p>
+                        <p class="fs-6 mb-4">Especificos:</p>
+                        <li>Contador de pulsos</li>
+                            <li>Utilizando 1 Arduino, diseñar una función que permita enviar un número determinado de pulsos (Variación de 0 a 1) a una frecuencia específica, la función debe tener la siguiente estructura void pulsos(int cantidad, int duración). (Comprobar el correcto funcionamiento utilizando el osciloscopio).</li>
+                            <li>Utilizando un segundo Arduino, diseñar una función que permita contar el número de pulsos que ha recibido (Variación de 0 a 1) y mostrarlos en el monitor serial.</li>
+                            <li>Utilizando ambos arduinos, conectar un pin de los Arduinos para comprobar el funcionamiento del sistema enviando un numero de pulsos específicos a la velocidad de 1 pulso por segundo,10, 100 y 1000 pulsos por segundo.</li>
+                        <li>Contador de duración de pulsos</li>
+                            <li>Utilizando 1 Arduino, diseñar una función que permita enviar un pulso con un tiempo en High determinado (Comprobar el correcto funcionamiento utilizando el osciloscopio).</li>
+                            <li>Utilizando un segundo Arduino, diseñar una función que permita contar el tiempo de la duración de un pulso que ha recibido del primer Arduino (Variación de 0 a 1) y mostrarlos en el monitor serial.</li>
+                        
   
                         <p id="materiales">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Materiales -</h2>
-                        <li>hhh</li>
-                        <li>hhhh</li>
+                        <li>2 Arduinos</li>
+                        <li>Protoboard</li>
                         <li>Leds</li>
-                        <li>Cable</li>
-                        <li>hh</li>
-                        <li>h</li>
+                        <li>Botones</li>
                         
                         <p id="desarrollo">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
-                        <p class="fs-6 mb-4">hh</p>
+                        <p class="fs-6 mb-4">A partir de esta imagen se realizó el armado del circuito.</p>
                         <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/Circuitos.png" alt="..." /></figure>
                             <p id="simulacion">
-                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">construccion</h1>
-                            <p class="fs-6 mb-4">hhh</p>
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Codigo</h1>
+                            <p class="fs-6 mb-4">// ENVIA DATOS, VELOCIDAD MAX 100 PULSOS EN 10 MILISEGUNDOS
+
+                                #define LED 3 
+                                int valor_pulso= 0; 
+                                int cantidad = 83;
+                                int duracion = 11; // en milisegundos
+                                int i= 0;
+                                int flag= 0;
+                                
+                                void setup() {
+                                  // put your setup code here, to run once: 
+                                  pinMode(LED, OUTPUT); 
+                                  
+                                }
+                                
+                                void loop() {
+                                  while(flag==0){
+                                    pulsos(cantidad, duracion); 
+                                    flag=1; 
+                                  }   
+                                }
+                                
+                                void pulsos(int cantidad, int duracion){
+                                  for (i; i<cantidad; i++){
+                                    
+                                    digitalWrite(LED, HIGH);  
+                                    delay(duracion);
+                                    //Serial.println("Led encencido");
+                                  
+                                    digitalWrite(LED, LOW);
+                                    delay(duracion);
+                                    //Serial.println("Led apagado");
+                                  } 
+                                }
+                            </p>
                             
                             <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/fluid.jpg" alt="..." /></figure>
                     
