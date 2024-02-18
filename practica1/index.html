@@ -107,47 +107,17 @@
                         <p id="desarrollo">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
                         <p class="fs-6 mb-4">A partir de esta imagen se realizó el armado del circuito.</p>
-                        <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/Circuitos.png" alt="..." /></figure>
+                        <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/circtin.png" alt="..." /></figure>
                             <p id="simulacion">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Codigo</h1>
-                            <p class="fs-6 mb-4">// ENVIA DATOS, VELOCIDAD MAX 100 PULSOS EN 10 MILISEGUNDOS
-
-                                #define LED 3 
-                                int valor_pulso= 0; 
-                                int cantidad = 83;
-                                int duracion = 11; // en milisegundos
-                                int i= 0;
-                                int flag= 0;
-                                
-                                void setup() {
-                                  // put your setup code here, to run once: 
-                                  pinMode(LED, OUTPUT); 
-                                  
-                                }
-                                
-                                void loop() {
-                                  while(flag==0){
-                                    pulsos(cantidad, duracion); 
-                                    flag=1; 
-                                  }   
-                                }
-                                
-                                void pulsos(int cantidad, int duracion){
-                                  for (i; i<cantidad; i++){
-                                    
-                                    digitalWrite(LED, HIGH);  
-                                    delay(duracion);
-                                    //Serial.println("Led encencido");
-                                  
-                                    digitalWrite(LED, LOW);
-                                    delay(duracion);
-                                    //Serial.println("Led apagado");
-                                  } 
-                                }
-                            </p>
+                            <p class="fs-6 mb-4">Aqui se encuentra el codigo del Arduino 1</p>
                             
-                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/fluid.jpg" alt="..." /></figure>
-                    
+                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/cod.JPG" alt="..." /></figure>
+
+                            <p class="fs-6 mb-4">Aqui se encuentra el codigo del Arduino 2</p>
+                            
+                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/cod2.JPG" alt="..." /></figure>
+
                             <p id="diseño">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Diseño</h1>
                             <p class="fs-6 mb-4">Para esta practica no fue necesario plantear un diseño, solo seguir los diagramas de conexiones y hacer las pruebas pertinentes</p>
@@ -156,14 +126,15 @@
 
                         <p id="resultados">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h2>
-                        <p class="fs-6 mb-4">A continuacion se muestran los videos tanto de los circuitos fisicos</p>
+                        <p class="fs-6 mb-4">A continuacion se muestran los resultados de la práctica</p>
                         <br>
+                        <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/armadoprac1.png" alt="..." /></figure>
                         <div class="container">
                             <div class="row">
-                              <p>hhhh</p>
+                              <p>Circuitos</p>
                               <div class="col">
                                 <figure class="mb-4" align="center"><video width="450" height="315"  controls>
-                                    <source src="video/1.mp4" type="video/mp4">
+                                    <source src="files/Practica1.mp4" type="video/mp4">
                                 </video></p></figure>
                               </div>
                             
@@ -173,15 +144,17 @@
 
                         <p id="conclusiones">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
-                        <p class="fs-6 mb-4">hhhh</p>
+                        <p class="fs-6 mb-4">Se completaron todos los objetivos de manera satisfactoria y se comprobó el funcionamiento de la comunicación entre circuitos. Esta práctica ayudó a profundizar el conocimiento en la comunicación entre sistemas y demuestra una interacción básica en una red equipo-equipo que sirve como base para poder iniciar distintas instrucciones y comandos que pueden ser llevados a otros equipos e incrementarse en complejidad, capacidad y alcance.</p>
                         
 
                         <p id="referencias">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
-                        <p> hhhh</p>
+                        <p>Para esta práctica no se presentaron evidencias.</p>
                         <p id="descargables">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Descargables -</h2>
-                        <p>En esta practica no se generaron archivos</p>
+                        <li></li>
+                        <li><a class="nav-link" href="files/Envia_datos.ino">Envio de Datos</a></li>
+                        <li><a class="nav-link" href="files/Recibe_datos.ino">Receptor de Datos</a></li>
 
                 </div>
             </section>
